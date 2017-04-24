@@ -1,14 +1,15 @@
-import { GithubAppPage } from './app.po';
 
-describe('github-app App', () => {
-  let page: GithubAppPage;
+describe('QuickStart E2E Tests', function () {
 
-  beforeEach(() => {
-    page = new GithubAppPage();
+  let expectedMsg = 'My First Angular App';
+
+
+  beforeEach(function () {
+    browser.get('');
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+  it('should display: ' + expectedMsg, function () {
+    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
   });
+
 });
